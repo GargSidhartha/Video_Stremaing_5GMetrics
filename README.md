@@ -89,3 +89,86 @@ This project is divided into two main parts:
     *   Download the appropriate ChromeDriver for your Chrome browser version.
     *   Ensure you have Python 3.x installed.
     *   Run the automation script (`main.py` or similar) to launch the configuration GUI.
+
+## Step-by-Step Instructions for Setting Up the Environment and Dependencies
+
+1. **Install Python 3.x:**
+   - Download and install Python 3.x from the official website: https://www.python.org/downloads/
+   - Ensure that Python is added to your system's PATH.
+
+2. **Install Appium:**
+   - Install Appium using npm (Node Package Manager). First, install Node.js from https://nodejs.org/
+   - Open a terminal or command prompt and run the following command:
+     ```
+     npm install -g appium
+     ```
+
+3. **Install Appium-Python-Client:**
+   - Install the Appium-Python-Client using pip:
+     ```
+     pip install Appium-Python-Client
+     ```
+
+4. **Install Selenium:**
+   - Install the Selenium package using pip:
+     ```
+     pip install selenium
+     ```
+
+5. **Download ChromeDriver:**
+   - Download the appropriate ChromeDriver for your Chrome browser version from: https://sites.google.com/a/chromium.org/chromedriver/downloads
+   - Place the ChromeDriver executable in a known location on your system.
+
+6. **Set Up the Enhanced DASH Streaming Webpage:**
+   - Deploy the `index.html` file on a web server or open it directly in a web browser.
+
+## Detailed Instructions for Running the Project
+
+1. **Run the Automation Script:**
+   - Navigate to the directory containing the automation script (`automateApp/auto.py`).
+   - Open a terminal or command prompt and run the script:
+     ```
+     python auto.py
+     ```
+
+2. **Configure the Automation Script:**
+   - A Tkinter GUI will appear, prompting you to enter the following details:
+     - Device Name: Enter the name of your Android device (e.g., "OnePlus Nord").
+     - ChromeDriver Path: Enter the path to the ChromeDriver executable (e.g., `C:\path\to\chromedriver.exe`).
+     - Website URL: Enter the URL of the Enhanced DASH Streaming webpage (e.g., `http://localhost/index.html`).
+     - Video Playback Time: Enter the duration for video playback in seconds (e.g., "30").
+
+3. **Start the Automation:**
+   - Click the "Start Automation" button in the Tkinter GUI.
+   - The script will open the Chrome browser on the specified Android device, navigate to the webpage, and start video playback.
+   - After the specified playback time, the script will download the QoE report and notify you upon completion.
+
+## Troubleshooting
+
+### Common Errors and Solutions
+
+1. **Error: "Appium server is not running"**
+   - Solution: Ensure that the Appium server is running. You can start the Appium server by running the following command in a terminal or command prompt:
+     ```
+     appium
+     ```
+
+2. **Error: "ChromeDriver executable needs to be available in the path"**
+   - Solution: Ensure that the ChromeDriver executable is in the specified path. Verify the path entered in the Tkinter GUI and make sure it points to the correct location of the ChromeDriver executable.
+
+3. **Error: "Device not found"**
+   - Solution: Ensure that your Android device is connected to your computer and that USB debugging is enabled. You can check if the device is recognized by running the following command:
+     ```
+     adb devices
+     ```
+
+4. **Error: "Element not found"**
+   - Solution: Ensure that the Enhanced DASH Streaming webpage is accessible and that the specified URL is correct. Verify that the webpage elements (e.g., video player, download button) are present and correctly identified in the script.
+
+5. **Error: "Playback time is too short"**
+   - Solution: Increase the video playback time in the Tkinter GUI to ensure that the video plays for a sufficient duration before attempting to download the QoE report.
+
+6. **General Troubleshooting Tips:**
+   - Check the terminal or command prompt for detailed error messages and stack traces.
+   - Ensure that all dependencies (Python, Appium, Selenium, ChromeDriver) are installed and up to date.
+   - Verify that the Enhanced DASH Streaming webpage is functioning correctly by opening it directly in a web browser.
